@@ -8,7 +8,7 @@
   <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-estrutura-do-projeto">Estrutura do Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
-    <a href="#-autor">Licença</a>
+  <a href="#-autor">Autor</a>
 </p>
 
 <p align="center">
