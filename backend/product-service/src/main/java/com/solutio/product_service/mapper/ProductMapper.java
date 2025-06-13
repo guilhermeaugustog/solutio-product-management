@@ -19,7 +19,7 @@ public class ProductMapper {
         dto.setName(product.getName());
         dto.setDescription(product.getDescription());
         dto.setPrice(product.getPrice() != null ? BigDecimal.valueOf(product.getPrice()) : null);
-        dto.setQuantity(product.getStockQuantity());
+        dto.setQuantity(product.getQuantity());
         return dto;
     }
     
@@ -30,7 +30,7 @@ public class ProductMapper {
         product.setName(dto.getName());
         product.setDescription(dto.getDescription());
         product.setPrice(dto.getPrice() != null ? dto.getPrice().doubleValue() : null);
-        product.setStockQuantity(dto.getQuantity());
+        product.setQuantity(dto.getQuantity());
         return product;
     }
 } 
