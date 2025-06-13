@@ -1,0 +1,56 @@
+services:
+  product-service:
+    build:
+      context: ./backend/product-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://product-db:5432/productdb
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+    depends_on:
+      product-db:
+        condition: service_healthy
+    networks:
+      - product-network
+
+  product-db:
+    image: postgres:13-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: productdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - product_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d productdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - product-network
+
+  stock-service:
+    build:
+      context: ./backend/stock-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      PRODUCT_SERVICE_URL: http://product-service:8081
+    depends_on:
+      - product-service
+    networks:
+      - product-network
+
+networks:
+  product-network:
+    driver: bridge
+
+volumes:
+  product_db_data: 
