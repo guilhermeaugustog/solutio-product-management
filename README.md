@@ -45,7 +45,7 @@ git clone https://github.com/guilhermeaugustog/solutio-product-management.git
 ```
 
 ### 2. Iniciar os serviços Java e o banco Postgre pelo docker
-Com o [Docker](https://www.docker.com) instalado anteriormente acesse a pasta com os arquivos clonados do repositório e execute o seguinte comando:
+Com o [Docker](https://www.docker.com) instalado anteriormente acesse a pasta com os arquivos clonados do repositório e execute os seguintes comandos:
 ```
 cd solutio-product-management
 docker-compose up --build
