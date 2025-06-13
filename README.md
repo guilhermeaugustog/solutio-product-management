@@ -1,18 +1,73 @@
-# Super market case
+<h1 align="center">
+    <img alt="Comics" title="Comics" src=".github/logo.png" width="50%" />
+</h1>
 
-Projeto desenvolvido como parte de um case técnico, composto por dois microsserviços em Java Spring Boot e um frontend em Angular. A aplicação permite o gerenciamento de produtos e a visualização de estoque em tempo real.
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
 
-## Clone
+<br>
+
+<p align="center">
+  <img alt="Comics" src=".github/solutio_product_management.png" width="100%">
+</p>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Angular](https://pt-br.reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Java](https://www.java.com/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [PostgreSQL](https://www.postgresql.org)
+- [Docker](https://www.docker.com)
+
+## 💻 Projeto
+O projeto (site web e dois microsserviços) foi criado para a realização de um teste de emprego para a Tech Solutio.
+
+## 🔧 Instalação
+
+Para executar o projeto em sua máquina, serão necessários os seguintes recursos instalados:
+
+- [Node.js](https://nodejs.org/en/)
+- [Java](https://www.java.com/) 
+- [Docker](https://maven.apache.org)
+
+### 1. Copiar os arquivos do repositório para a sua máquina
+Para realizar uma cópia deste projeto em sua máquina utilize o seguinte comando na pasta desejada atráves do prompt/terminal de comando do seu sistema:
 ```
 git clone https://github.com/guilhermeaugustog/solutio-product-management.git
 ```
 
----
+### 2. Iniciar os serviços Java e o banco Postgre pelo docker
+Com o [Docker](https://www.docker.com) instalado anteriormente acesse a pasta com os arquivos clonados do repositório e execute o seguinte comando:
+```
+cd solutio-product-management
+docker-compose up --build
+```
+### 3. Executar o projeto Angular (site) em sua máquina
+Com o [Node](https://nodejs.org/en/) instalado anteriormente acesse a pasta com os arquivos clonados do projeto Angular e executando os seguintes comandos:
+```
+cd solutio-product-management
+cd frontend
+cd product-management
+npm install 
+```
+Após o comando ```npm install``` ser finalizado, execute o projeto com o seguinte seguinte comando:
+```
+ng serve
+```
+
 
 ## 🧩 Estrutura do Projeto
 
 ```
-
 solutio-product-management/
 ├── backend/
 │   ├── product-service/      # Serviço Java para gestão de produtos
@@ -22,81 +77,10 @@ solutio-product-management/
 
 ````
 
----
+## :memo: Licença
 
-## 📦 Microsserviços
-
-### 🛍️ product-service
-
-- CRUD de produtos
-- Banco de dados: Postgre
-- Porta: `8081`
-
-### 📦 stock-service
-
-- Consulta de estoque via integração com o `product-service`
-- Porta: `8082`
-
----
-
-## 🖥️ Frontend - Angular
-
-- Exibe a lista de produtos e informações de estoque
-- Comunica-se com o `stock-service`
-- Porta: `4200`
-
----
-
-## ▶️ Como Executar
-
-### Pré-requisitos
-
-- Docker + Docker Compose
-- Node.js + Angular CLI (para desenvolvimento frontend)
-- Java 24 + Maven (para desenvolvimento backend)
-
-### 1. Subir com Docker Compose
-
-```bash
-cd solutio-product-management
-docker-compose up --build
-````
-
-* `product-service`: [http://localhost:8080](http://localhost:8081)
-* `stock-service`: [http://localhost:8081](http://localhost:8082)
-* `Postgre`: Porta 5432
-
-### 2. Rodar o Frontend
-
-```bash
-cd solutio-product-management
-cd frontend
-cd product-management
-npm install
-ng serve
-```
-
-Acesse: [http://localhost:4200](http://localhost:4200)
-
----
-
-## ✅ Funcionalidades
-
-* Cadastro, edição, listagem e exclusão de produtos
-* Visualização de quantidade em estoque
-* Indicação de produtos com estoque baixo
-
----
-
-
-## 📄 Documentação da API
-
-* Swagger disponível em: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 ## 👨‍💻 Autor
 
-Guilherme Augusto Gomes Araujo
-[rfcavalcant](https://github.com/guilhermeaugustog)
-
----
+Projeto desenvolvido por [Guilherme Gomes](https://github.com/guilhermeaugustog) em teste para Tech Solutio :wave:
