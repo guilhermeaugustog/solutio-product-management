@@ -27,7 +27,7 @@ export class ProductService {
       name: product.name,
       description: product.description,
       price: product.price,
-      quantity: (product as any).stockQuantity,
+      quantity: product.quantity,
     };
 
     const response : any = await axios.put(`${environment.productApiUrl}/api/products/${product.id}`, auxProduct);

@@ -43,7 +43,14 @@
               </span>
             </ng-container>
             <ng-template #statusText>
-              {{ product.stockStatus }}
+              <span [ngClass]="{
+                'px-2 py-1 rounded-full text-sm font-medium': true,
+                ' text-red-500': product.stockStatus === 'Out of stock',
+                ' text-yellow-500': product.stockStatus === 'Low stock',
+                ' text-green-500': product.stockStatus === 'Stock available'
+              }">
+                {{ product.stockStatus }}
+              </span>
             </ng-template>
           </td>
           <td class="px-6 py-4 relative">
@@ -95,7 +102,6 @@
     </table>
   </div>
   } @loading (after 100ms) {
-  <!-- No specific loading message needed here since skeletonizer is in placeholder -->
   } @error {
   <div class="text-center py-8 text-red-500">Failed to load products. Please try again later.</div>
   }
