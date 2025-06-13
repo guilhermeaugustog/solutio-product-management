@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <img alt="Comics" src=".github/solutio_product_management.png" width="100%">
+  <img alt="Solutio Product Management" src=".github/solutio_product_management.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
