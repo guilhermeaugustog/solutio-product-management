@@ -8,7 +8,7 @@
       <input class="w-full border rounded px-3 py-2" placeholder="Name" [(ngModel)]="form.name" name="name" [readonly]="mode === 'view'" required />
       <textarea class="w-full border rounded px-3 py-2" placeholder="Description" [(ngModel)]="form.description" name="description" [readonly]="mode === 'view'"></textarea>
       <input class="w-full border rounded px-3 py-2" type="number" placeholder="Price" [(ngModel)]="form.price" name="price" [readonly]="mode === 'view'" required />
-      <input class="w-full border rounded px-3 py-2" type="number" placeholder="Stock Quantity" [(ngModel)]="form.stockQuantity" name="stockQuantity" [readonly]="mode === 'view'" required />
+      <input class="w-full border rounded px-3 py-2" type="number" placeholder="Stock Quantity" [(ngModel)]="form.quantity" name="quantity" [readonly]="mode === 'view'" required />
       <button type="submit" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 w-full">
         {{ mode === 'create' ? 'Create' : 'Save' }}
       </button>
@@ -18,7 +18,7 @@
       <div><strong>Name:</strong> {{ form.name }}</div>
       <div><strong>Description:</strong> {{ form.description }}</div>
       <div><strong>Price:</strong> {{ form.price }}</div>
-      <div><strong>Stock Quantity:</strong> {{ form.stockQuantity }}</div>
+      <div><strong>Stock Quantity:</strong> {{ form.quantity }}</div>
     </div>
   </div>
 </div> 
